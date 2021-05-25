@@ -7,8 +7,14 @@
 		//document.ready 생략되어 있는 것 맞음
 		
 		$('#idCheck').click(function(){
+			var chid = $('#imemberId').val();
+			
 			if($('#memberId').val()==""){
 				alert('아이디를 입력하시오');
+				$('#memberId').focus();
+				return;
+			} else if((chid < "0" || chid > "9") && (chid < "A" || chid > "Z") && (chid < "a" || chid > "z")){
+				alert('한글 및 특수문자는 사용 불가');
 				$('#memberId').focus();
 				return;
 			}
