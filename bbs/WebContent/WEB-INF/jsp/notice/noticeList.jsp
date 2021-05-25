@@ -39,7 +39,7 @@
 			<div>
 				<button type="button" onclick="location.href='main.do'">메인 화면</button>
 				<c:if test="${id eq 'admin' }">
-					<button type="button" onclick="'noticeForm.do'">등록</button>
+					<button type="button" onclick="location.href='noticeInsert.do'">등록</button>
 				</c:if>
 			</div>
 		</div>

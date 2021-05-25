@@ -27,11 +27,12 @@ public class NoticeUpdate implements DbCommand {
 		vo.setContent(content);
 		
 		NoticeService service = new NoticeServiceImpl();
-		service.updateNotice(vo);
+		int r = service.updateNotice(vo);
+		System.out.println(r + "건 수정");
 		
 		request.setAttribute("noticeUpdate", vo);
 		
-		return "noticeList.do";
+		return "noticeListPaging.do";
 	}
 
 }

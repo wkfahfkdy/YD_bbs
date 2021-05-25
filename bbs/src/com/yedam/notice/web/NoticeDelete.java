@@ -8,27 +8,23 @@ import com.yedam.notice.service.NoticeService;
 import com.yedam.notice.serviceImpl.NoticeServiceImpl;
 import com.yedam.notice.vo.NoticeVO;
 
-public class Notice implements DbCommand {
+public class NoticeDelete implements DbCommand {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		// 한 건 조회 -> notice.jsp
-		// serviceImpl 구현
 		
-		String id = request.getParameter("id"); // noticeList.jsp
-		
+		String id = request.getParameter("id");
+		System.out.println(id);
 		NoticeVO vo = new NoticeVO();
 		vo.setId(Integer.parseInt(id));
 		
 		NoticeService service = new NoticeServiceImpl();
-		NoticeServiceImpl ser2 = new NoticeServiceImpl();
+		int r = service.deleteNotice(vo);
+		System.out.println(r + "건 삭제");
 		
-		ser2.hitCount(Integer.parseInt(id));
-		service.noticeSelect(vo);
+		request.setAttribute("noticeDelete", vo);
 		
-		request.setAttribute("notice", vo);
-		
-		return "notice/notice.tiles";
+		return "noticeListPaging.do";
 	}
 
 }

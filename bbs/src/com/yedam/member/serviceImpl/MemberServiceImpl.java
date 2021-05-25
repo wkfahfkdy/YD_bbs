@@ -132,6 +132,7 @@ public class MemberServiceImpl extends DAO implements MemberService{
 
 	@Override
 	public int deleteMember(MemberVO vo) {
+		
 		return 0;
 	}
 

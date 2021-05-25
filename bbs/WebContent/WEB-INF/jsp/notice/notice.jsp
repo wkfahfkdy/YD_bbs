@@ -13,6 +13,14 @@
 		
 		frm.submit();
 	}
+	
+	function noticeDelete() {
+		let id = document.getElementById("cid").innerHTML;
+		
+		frm2.id.value = id;
+		
+		frm2.submit();
+	}
 </script>
 <div align="center">
 	<h3>공지사항</h3>
@@ -20,6 +28,9 @@
 		<input type="hidden" name="id">
 		<input type="hidden" name="title">
 		<input type="hidden" name="content">
+	</form>
+	<form id="frm2" action="noticeDelete.do" method="post">
+		<input type="hidden" name="id">
 	</form>
 	<c:if test="${id eq 'admin' }">
 	<table border="1">
@@ -41,7 +52,7 @@
 		</tr>
 	</table><br>
 	</c:if>
-		<c:if test="${id  ne 'admin' }"> <!-- not eq 이나 !eq 가 아니라 ne  -->
+		<c:if test="${id  ne 'admin' }"> <!-- ne : Not Equal  -->
 	<table border="1">
 		<tr>
 			<th>순번</th>
@@ -62,9 +73,10 @@
 	</table><br>
 	</c:if>
 	<div>
-		<button type="button" onclick="location.href='noticeList.do'">목록 보기</button>
+		<button type="button" onclick="location.href='noticeListPaging.do'">목록 보기</button>
 		<c:if test="${id eq 'admin' }">
 			<button type="button" onclick="noticeUpdate()">수정</button>
+			<button type="button" onclick="noticeDelete()">삭제</button>
 		</c:if>
 	</div>
 </div>
