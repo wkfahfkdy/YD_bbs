@@ -9,6 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.yedam.bulletin.web.Bulletin;
+import com.yedam.bulletin.web.BulletinDelete;
+import com.yedam.bulletin.web.BulletinForm;
+import com.yedam.bulletin.web.BulletinInsertPage;
+import com.yedam.bulletin.web.BulletinList;
+import com.yedam.bulletin.web.BulletinListPaging;
+import com.yedam.bulletin.web.BulletinUpdate;
 import com.yedam.member.web.MemberJoin;
 import com.yedam.member.web.MemberJoinForm;
 import com.yedam.member.web.MemberLogin;
@@ -44,6 +51,16 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeForm.do", new NoticeForm());
 		map.put("/noticeInsert.do", new NoticeInsertPage());
 		map.put("/noticeDelete.do", new NoticeDelete());
+		
+		// 게시글 관련
+		map.put("/bulletinList.do", new BulletinList());
+		map.put("/bulletinInsert.do", new BulletinInsertPage());
+		map.put("/bulletinForm.do", new BulletinForm());
+		map.put("/bulletin.do", new Bulletin());
+		map.put("/bulletinUpdate.do", new BulletinUpdate());
+		map.put("/bulletinDelete.do", new BulletinDelete());
+		map.put("/bulletinListPaging.do", new BulletinListPaging());
+		 
 	}
 	
 	@Override
