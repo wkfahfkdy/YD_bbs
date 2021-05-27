@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import com.yedam.common.DbCommand;
 import com.yedam.member.serviceImpl.MemberServiceImpl;
 import com.yedam.member.vo.MemberVO;
+import com.yedam.product.serviceImpl.ProductServiceImpl;
 
 public class MemberLogin implements DbCommand {
 
@@ -26,6 +27,7 @@ public class MemberLogin implements DbCommand {
 		
 		MemberServiceImpl service = new MemberServiceImpl();
 		MemberVO rvo = service.loginCheck(vo);
+		
 		
 		String path = "";
 		

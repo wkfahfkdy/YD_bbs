@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="//cdn.ckeditor.com/4.16.1/full/ckeditor.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script>
 	$(function() {
 		CKEDITOR.replace('content', {
@@ -103,7 +104,7 @@
 			<th>작성일자</th>
 			<td>${bulletin.regDate }</td>
 			<th>조회수</th>
-			<td>${bulletin.hit }</td>
+			<td><i class="material-icons" style="font-size:28px;color:red">filter_${bulletin.hit }</i></td>
 		</tr>
 		<tr>
 			<th>제목</th>
@@ -112,7 +113,7 @@
 					<input id="title" name="title" type="text" value="${bulletin.title }">
 				</c:if>
 				<c:if test="${id ne bulletin.writer }">
-					<input id="title" name="title" type="text" value="${bulletin.title }" readonly>
+					${bulletin.title }
 				</c:if>
 			</td>
 		</tr>

@@ -14,7 +14,7 @@ public class MemberLogout implements DbCommand {
 		HttpSession session =  request.getSession();
 		session.invalidate(); // 세션 삭제
 		
-		return "main/main.tiles";
+		return "main/main2.tiles";
 	}
 
 }

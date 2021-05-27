@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <title>Insert title here</title>
 <style>
 .pagination {
@@ -65,7 +66,7 @@ body h3 {
 						<td onclick="formSubmit(${vo.id })">${vo.title }</td>
 						<td>${vo.writer }</td>
 						<td>${vo.regDate }</td>
-						<td>${vo.hit }</td>
+						<td><i class="material-icons" style="font-size:28px;color:red">filter_${vo.hit }</i></td>
 					</tr>
 				</c:forEach>
 			</table>
